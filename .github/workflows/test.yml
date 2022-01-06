@@ -49,11 +49,11 @@ jobs:
       - uses: actions/github-script@v5
         with:
           script: |
-            github.rest.issues.removeLabels({
+            github.rest.issues.removeLabel({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['Z-Labs']
+              name: 'Z-Labs'
             })
 
   move_needs_info_issues:
