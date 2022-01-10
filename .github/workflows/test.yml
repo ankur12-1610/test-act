@@ -21,10 +21,10 @@ jobs:
         contains(github.event.issue.labels.*.name, 'A-E2EE-Dehydration') ||
         contains(github.event.issue.labels.*.name, 'A-Tags')
     steps:
-      - uses: actions/github-script@0.8.0
+      - uses: actions/github-script@v5
         with:
           script: |
-            await github.rest.issues.addLabel({
+            await github.rest.issues.addLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
