@@ -49,11 +49,11 @@ jobs:
       - uses: actions/github-script@v5
         with:
           script: |
-            core.request{
+            github.rest.issues.removeLabels({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: 'Z-Labs'
+              labels: ['Z-Labs']
             })
   move_needs_info_issues:
     name: X-Needs-Info issues to Need info column on triage board
