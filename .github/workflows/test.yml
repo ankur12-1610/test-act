@@ -34,7 +34,7 @@ jobs:
     name: Remove Z-Labs label for features behind labs flags
     runs-on: ubuntu-latest
     if: >
-        contains(github.event.issue.labels.*.name, 'A-Maths') || 
+        !contains(github.event.issue.labels.*.name, 'A-Maths') || 
         contains(github.event.issue.labels.*.name, 'A-Message-Pinning') ||
         contains(github.event.issue.labels.*.name, 'A-Threads') ||
         contains(github.event.issue.labels.*.name, 'A-Polls') ||
