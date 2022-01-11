@@ -2,7 +2,7 @@ name: Move labelled issues to correct boards and columns
 
 on:
   issues:
-    types: [labeled]
+    types: [labeled, unlabeled]
     
 jobs:
   apply_Z-Labs_label:
